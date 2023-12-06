@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    /* Modules */
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["*"]
+      // "@pages/*": ["/pages/*"]
+    },
+    "resolveJsonModule": true,
+
+    /* Type Checking */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": false,
+    // "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    /* Language and Environment */
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    // "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // "lib": ["dom", "dom.iterable", "ESNext", "ESNext.AsyncIterable"],
+    "target": "es2015",
+    // "target": "es6",
+
+    /* Interop Constraints */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Emit */
+    "declaration": true,
+    "downlevelIteration": true,
+    "inlineSources": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true,
+
+    /* Completeness */
+    // "allowJs": true,
+    "allowJs": false,
+    "skipLibCheck": true
+
+    // "noEmit": true,
+    // "isolatedModules": true,
+    // "incremental": true
+  },
+  // "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "framework/services/format/date/index.js"],
+  "exclude": []
+}
