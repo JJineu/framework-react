@@ -5,8 +5,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "@/*": ["*"]
-      // "@pages/*": ["/pages/*"]
+      "@services/*": ["/services/*"]
     },
     "resolveJsonModule": true,
 
