@@ -2,19 +2,27 @@ import { isKoreanName } from './is-name';
 
 export function maskName(name: string) {
   if (isKoreanName(name)) {
-    switch (name.length) {
-      case 2:
-        return name.replace(/([가-힣])([가-힣]+)/, '$1*');
-      default:
-        return maskExceptForEdge(name, 1);
-    }
+    return maskKoreanName(name);
   } else {
-    if (name.length < 3) {
-      return name;
-    }
-    const unmaskedSideSize = name.length < 6 ? 1 : 2;
-    return maskExceptForEdge(name, unmaskedSideSize);
+    return maskNonKoreanName(name);
   }
+}
+
+function maskKoreanName(name: string) {
+  if (name.length === 2) {
+    return name.replace(/([가-힣])([가-힣]+)/, '$1*');
+  } else {
+    return maskExceptForEdge(name, 1);
+  }
+}
+
+function maskNonKoreanName(name: string) {
+  if (name.length < 3) {
+    return name;
+  }
+
+  const unmaskedSideSize = name.length < 6 ? 1 : 2;
+  return maskExceptForEdge(name, unmaskedSideSize);
 }
 
 function maskExceptForEdge(text: string, edgeSize: number) {
