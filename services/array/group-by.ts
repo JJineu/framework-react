@@ -1,6 +1,6 @@
-export function groupBy<T extends Record<string | number, unknown>>(data: T[], key: keyof T) {
-  return data.reduce((result: Record<string | number, T[]>, current) => {
-    const groupKey = current[key] as string | number;
+export function groupBy<T extends Record<string, unknown>>(arr: T[], key: keyof T) {
+  return arr.reduce((result: Record<string, T[]>, current) => {
+    const groupKey = current[key] as string;
     const group = result[groupKey];
 
     if (group == null) {
