@@ -1,6 +1,4 @@
-function isKoreanName(name: string) {
-  return /[가-힣]{2,}/.test(name);
-}
+import { isKoreanName } from './is-name';
 
 export function maskName(name: string) {
   if (isKoreanName(name)) {
@@ -14,7 +12,6 @@ export function maskName(name: string) {
     if (name.length < 3) {
       return name;
     }
-
     const unmaskedSideSize = name.length < 6 ? 1 : 2;
     return maskExceptForEdge(name, unmaskedSideSize);
   }
